@@ -5,16 +5,15 @@
     "type": "array",
     "maxItems": 10,
     "items": {
-      "$ref": "#/$defs/child"
+      "$ref": "#/$defs/letter"
     },
     "$defs": {
-      "child": {
+      "letter": {
         "type": "object",
         "required": [
           "firstName",
           "familyName",
-          "address",
-          "naughtyOrNice"
+          "requestedPresent"
         ],
         "properties": {
           "firstName": {
@@ -25,13 +24,9 @@
             "type": "string",
             "faker": "name.lastName"
           },
-          "address": {
+          "requestedPresent": {
             "type": "string",
-            "format": "nl-address"
-          },
-          "naughtyOrNice": {
-            "type": "string",
-            "pattern": "Naughty|Nice"
+            "pattern": "Ball|Book|Moose|Horse|Bells|Brushes|Playstation|Xbox|Nintendo|Mario|Cat|Dog|Snacks|Unicorn|Shoes|Blanket|Necklace|Broom|Coal|Windows|Stick|Bow|Sword"
           }
         }
       }
