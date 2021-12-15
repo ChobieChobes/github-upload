@@ -1,0 +1,47 @@
+{
+    "$id": "https://example.com/arrays.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "A representation of a person, company, organization, or place",
+    "type": "object",
+    "properties": {
+      "children": {
+        "type": "array",
+        "maxItems": 10,
+        "items": {
+          "$ref": "#/$defs/child"
+        }
+      }
+    },
+    "required": [
+      "children"
+    ],
+    "$defs": {
+      "child": {
+        "type": "object",
+        "required": [
+          "firstName",
+          "lastName",
+          "address",
+          "naughtyOrNice"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "faker": "name.firstName"
+          },
+          "lastName": {
+            "type": "string",
+            "faker": "name.lastName"
+          },
+          "address": {
+            "type": "string",
+            "faker": "address.streetAddress"
+          },
+          "naughtyOrNice": {
+            "type": "string",
+            "pattern": "Naughty|Nice"
+          }
+        }
+      }
+    }
+  }
